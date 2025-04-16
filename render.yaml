@@ -1,5 +1,5 @@
 databases:
-  - name: mysitedb
+  - name: csldb
     plan: free
     databaseName: csl
     user: csl
