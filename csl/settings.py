@@ -32,7 +32,7 @@ except KeyError:
     DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://csl-k5zt.onrender.com/',
+    'csl-k5zt.onrender.com',
     'localhost',
     '127.0.0.1'
 ]
