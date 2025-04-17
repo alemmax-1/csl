@@ -1,38 +1,26 @@
-<<<<<<< HEAD
-services:
-  - type: web
-    plan: free
-    name: csl
-=======
 databases:
-  - name: mysitedb
-    plan: free
-    databaseName: mysite
-    user: mysite
+  - name: clsdb
+    plan: cls
+    databaseName: cls
+    user: cls
 
 services:
   - type: web
     plan: free
-    name: mysite
->>>>>>> f59b16b (Aggiunta configurazione per deploy su render)
+    name: cls
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn csl.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-<<<<<<< HEAD
-          name: csldb
-=======
-          name: mysitedb
->>>>>>> f59b16b (Aggiunta configurazione per deploy su render)
+          name: clsdb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
       - key: DEBUG
-<<<<<<< HEAD
         value: False
       - key: CLOUDINARY_URL
         value: "cloudinary://213289612852938:W3vLc8IsC3PWf77tF6L6TAUCkoI@ddwvkwson"
@@ -50,6 +38,3 @@ services:
         value: "alessandro.matteucci@hotmail.com"
       - key: DJANGO_SETTINGS_MODULE
         value: "csl.settings"
-=======
-        value: True
->>>>>>> f59b16b (Aggiunta configurazione per deploy su render)
