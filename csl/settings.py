@@ -15,6 +15,8 @@ from pathlib import Path
 import dj_database_url
 import os
 from django.core.files.storage import default_storage
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -69,6 +71,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "csl.urls"
 
+# Aggiungi le credenziali di Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'ddwvkwson'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY', '213289612852938'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'W3vLc8IsC3PWf77tF6L6TAUCkoI'),
+}
+
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', 'cloudinary://213289612852938:W3vLc8IsC3PWf77tF6L6TAUCkoI@ddwvkwson')
+# Configurazione del percorso per i file media
+
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -113,20 +126,7 @@ else:
         )
     }
     
-# Configurazione dei file media
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# Aggiungi le credenziali di Cloudinary
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'ddwvkwson'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY', '213289612852938'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'W3vLc8IsC3PWf77tF6L6TAUCkoI'),
-}
-
-CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', 'cloudinary://213289612852938:W3vLc8IsC3PWf77tF6L6TAUCkoI@ddwvkwson')
-# Configurazione del percorso per i file media
-
-MEDIA_URL = '/media/'
 
 
 
