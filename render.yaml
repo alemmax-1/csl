@@ -30,3 +30,9 @@ services:
         value: "213289612852938"
       - key: CLOUDINARY_API_SECRET
         value: "W3vLc8IsC3PWf77tF6L6TAUCkoI"
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: "alessandro"
+      - key: DJANGO_SUPERUSER_PASSWORD
+        value: "Arciv123!"
+      - key: DJANGO_SUPERUSER_EMAIL
+        value: "alessandro.matteucci@hotmail.com"
