@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-*ow(k6eq!^mjy3u=#9c*#^_*rh^8f^*(((2#*2dgdm=*toi4-f"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'True')
 
 ALLOWED_HOSTS = [
     'csl-k5zt.onrender.com',
@@ -112,7 +112,7 @@ else:
             conn_max_age=600
         )
     }
-
+    
 # Configurazione dei file media
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -127,8 +127,6 @@ CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', 'cloudinary://213289612852938:W3vLc
 # Configurazione del percorso per i file media
 
 MEDIA_URL = '/media/'
-
-print("Default storage backend:", default_storage.__class__.__name__)
 
 
 
