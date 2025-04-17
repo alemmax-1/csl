@@ -14,6 +14,8 @@ from pathlib import Path
 # Import dj-database-url at the beginning of the file.
 import dj_database_url
 import os
+from django.core.files.storage import default_storage
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-*ow(k6eq!^mjy3u=#9c*#^_*rh^8f^*(((2#*2dgdm=*toi4-f"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-try:
-    DEBUG = os.environ['DEBUG']
-except KeyError:
-    DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     'csl-k5zt.onrender.com',
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "homepage",
 ]
 
 # applicazioni per la gestinoe dei MEDIA con cloudinary
@@ -127,6 +127,8 @@ CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', 'cloudinary://213289612852938:W3vLc
 # Configurazione del percorso per i file media
 
 MEDIA_URL = '/media/'
+
+print("Default storage backend:", default_storage.__class__.__name__)
 
 
 
