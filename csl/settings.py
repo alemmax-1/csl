@@ -49,6 +49,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# applicazioni per la gestinoe dei MEDIA con cloudinary
+INSTALLED_APPS += [
+    "cloudinary",
+    "cloudinary_storage",
+]
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -105,6 +112,23 @@ else:
             conn_max_age=600
         )
     }
+
+# Configurazione dei file media
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Aggiungi le credenziali di Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'ddwvkwson'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY', '213289612852938'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'W3vLc8IsC3PWf77tF6L6TAUCkoI'),
+}
+
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', 'cloudinary://213289612852938:W3vLc8IsC3PWf77tF6L6TAUCkoI@ddwvkwson')
+# Configurazione del percorso per i file media
+
+MEDIA_URL = '/media/'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

@@ -22,3 +22,11 @@ services:
         value: 4
       - key: DEBUG
         value: False
+      - key: CLOUDINARY_URL
+        value: "cloudinary://213289612852938:W3vLc8IsC3PWf77tF6L6TAUCkoI@ddwvkwson"
+      - key: CLOUDINARY_CLOUD_NAME
+        value: "ddwvkwson"
+      - key: CLOUDINARY_API_KEY
+        value: "213289612852938"
+      - key: CLOUDINARY_API_SECRET
+        value: "W3vLc8IsC3PWf77tF6L6TAUCkoI"
