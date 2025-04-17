@@ -10,6 +10,5 @@ pip install -r requirements.txt
 python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
-python manage.py dumpdata > db.json
-python manage.py migrate && python manage.py loaddata db.json
+python manage.py migrate
 python create_superuser.py
