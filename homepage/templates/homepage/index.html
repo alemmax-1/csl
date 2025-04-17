@@ -4,7 +4,13 @@
 {% endblock %}
 
 {% block content %}
-  <div id="carouselHome" class="carousel slide">
+  <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% for carousel in carousels %}
+      <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="{{ forloop.counter|add:"-1" }}" {% if forloop.counter|add:"-1" == 0 %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.counter }}"></button>
+      {% endfor %}  
+    </div>
+  
     <div class="carousel-inner">
       {% for carousel in carousels %}
         <div class="carousel-item {% if forloop.first %}active {% endif %}">
