@@ -8,11 +8,10 @@
     <div class="carousel-inner">
       {% for carousel in carousels %}
         <div class="carousel-item {% if forloop.first %}active {% endif %}">
-          <img src="{{ carousel.image.url }}" class="d-block w-100" alt="..." style="opacity: 0.5;" />
-          <div class="carousel-caption d-none d-md-block" style="background-color: rgba(11, 10, 10, 0.6); padding: 10px; border-radius: 10px;">
+            <img src="{{ carousel.image.url }}" class="d-block w-100 h-100" alt="..." style="object-fit: cover; opacity: 0.5;" />
+          <div class="carousel-caption d-block" style="background-color: rgba(11, 10, 10, 0.6); padding: 10px; border-radius: 10px;">
             <h3 class="text-light">{{ carousel.title }}</h3>
             <p class="text-light">{{ carousel.description }}</p>
-            <a href="#" class="btn btn-outline-light">Clicca qui</a>
           </div>
         </div>
       {% endfor %}
@@ -25,4 +24,4 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+</div>
