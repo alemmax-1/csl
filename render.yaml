@@ -36,3 +36,5 @@ services:
         value: "Arciv123!"
       - key: DJANGO_SUPERUSER_EMAIL
         value: "alessandro.matteucci@hotmail.com"
+      - key: DJANGO_SETTINGS_MODULE
+        value: "csl.settings"

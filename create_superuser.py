@@ -1,5 +1,13 @@
-from django.contrib.auth import get_user_model
 import os
+import django
+
+# Imposta il modulo delle impostazioni
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'csl.settings')
+
+# Configura Django
+django.setup()
+
+from django.contrib.auth import get_user_model
 
 # Ottieni il modello utente
 User = get_user_model()
