@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-*ow(k6eq!^mjy3u=#9c*#^_*rh^8f^*(((2#*2dgdm=*toi4-f"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True')
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = [
     'csl-k5zt.onrender.com',
@@ -73,12 +73,12 @@ ROOT_URLCONF = "csl.urls"
 
 # Aggiungi le credenziali di Cloudinary
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'ddwvkwson'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY', '213289612852938'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'W3vLc8IsC3PWf77tF6L6TAUCkoI'),
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
-CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', 'cloudinary://213289612852938:W3vLc8IsC3PWf77tF6L6TAUCkoI@ddwvkwson')
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
 # Configurazione del percorso per i file media
 
 
