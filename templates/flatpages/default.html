@@ -5,8 +5,8 @@
     <div class="container mt-5">
         <h1>{{ flatpage.title }}
             {% if user.is_staff %}
-             <a class="h3 link link-primary" target="_blank" href="{% url 'admin:flatpages_flatpage_change' flatpage.pk %}"><i class="fa-solid fa-pencil"></i></a>
-             <a class="h3 link link-danger" target="_blank" href="{% url 'admin:flatpages_flatpage_delete' flatpage.pk %}"><i class="fa-solid fa-trash"></i></a>
+             <a class="h3 btn btn-primary" target="_blank" href="{% url 'admin:flatpages_flatpage_change' flatpage.pk %}"><i class="fa-solid fa-pencil"></i></a>
+             <a class="h3 btn btn-danger" target="_blank" href="{% url 'admin:flatpages_flatpage_delete' flatpage.pk %}"><i class="fa-solid fa-trash"></i></a>
             {% endif %}</h1>
         <div class="content">
             {{ flatpage.content|safe }}
