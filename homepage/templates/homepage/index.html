@@ -4,7 +4,10 @@
 {% endblock %}
 
 {% block content %}
-{% comment %} CAROUSEL {% endcomment %}
+  {% comment %}CAROUSEL{% endcomment %}
   {% include 'homepage/components/carousel.html' %}
-  {% include 'homepage/components/marketing.html' %}
+  <div class="container marketing">
+    {% include 'homepage/components/marketing.html' %}
+    {% include 'homepage/components/features.html' %}
+  </div>
 {% endblock %}
