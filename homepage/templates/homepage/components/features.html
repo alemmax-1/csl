@@ -1,0 +1,56 @@
+<hr class="featurette-divider" />
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading fw-normal lh-1">{{ features.0.title }}. <span class="text-body-secondary">{{ features.0.subtitle }}.</span></h2>
+    <p class="lead">{{ features.0.description }}</p>
+  </div>
+  <div class="col-md-5">
+    {% if features.0.image %}
+      <img src="{{ features.0.image.url }}" class="card-img-top rounded featurette-image" alt="" />
+    {% else %}
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice">
+        <title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
+        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+      </svg>
+    {% endif %}
+  </div>
+</div>
+
+<hr class="featurette-divider" />
+
+<div class="row featurette">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading fw-normal lh-1">{{ features.1.title }}. <span class="text-body-secondary">{{ features.1.subtitle }}.</span></h2>
+    <p class="lead">{{ features.1.description }}</p>
+  </div>
+  <div class="col-md-5">
+    {% if features.1.image %}
+      <img src="{{ features.1.image.url }}" class="card-img-top rounded featurette-image" alt="" />
+    {% else %}
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice">
+        <title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
+        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+      </svg>
+    {% endif %}
+  </div>
+</div>
+
+<hr class="featurette-divider" />
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading fw-normal lh-1">{{ features.2.title }}. <span class="text-body-secondary">{{ features.2.subtitle }}.</span></h2>
+    <p class="lead">{{ features.2.description }}</p>
+  </div>
+  <div class="col-md-5">
+    {% if features.2.image %}
+      <img src="{{ features.2.image.url }}" class="card-img-top rounded featurette-image" alt="" />
+    {% else %}
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice">
+        <title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
+        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+      </svg>
+    {% endif %}
+  </div>
+</div>

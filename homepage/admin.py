@@ -22,3 +22,13 @@ class MarketingAdmin(admin.ModelAdmin):
     list_filter = ('order',)
     search_fields = ('title', 'description')
     ordering = ('order',)
+
+@admin.register(models.Feature)
+class FeatureAdmin(admin.ModelAdmin):
+    """
+    Modello per la gestione delle immagini del marketing.
+    """
+    list_display = ('title', 'description', 'order')
+    list_filter = ('order',)
+    search_fields = ('title', 'description')
+    ordering = ('order',)
