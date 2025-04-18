@@ -53,13 +53,25 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "homepage",
+    "csl",
+    "tinymce",
 ]
 
-# applicazioni per la gestinoe dei MEDIA con cloudinary
+TINYMCE_API_KEY = "6tf2l3sb7ucnf81m7dvnos41jelmhcwwou19eah2pq29t31u"
+TINYMCE_COMPRESSOR = False
+
+# applicazioni per la gestione dei MEDIA con cloudinary
 INSTALLED_APPS += [
     "cloudinary",
     "cloudinary_storage",
 ]
+# applicazioni per la gestione delle flatpages
+INSTALLED_APPS += [
+    "django.contrib.sites",
+    "django.contrib.flatpages",
+]
+
+SITE_ID=1
 
 
 MIDDLEWARE = [

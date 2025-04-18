@@ -16,9 +16,12 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.contrib.flatpages import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("homepage.urls", namespace="homepage")),
+    path('tinymce/', include('tinymce.urls')),
+    re_path(r"^(?P<url>.*/)$", views.flatpage),
 ]
