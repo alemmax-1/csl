@@ -15,13 +15,25 @@
             <a class="nav-link {% if request.path == page.url %}active disabled{% endif %}" aria-current="page" href="{{ page.url }}">{{ page.title }}</a>
           </li>
         {% endfor %}
+        {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/accounts/login/' %}active disabled{% endif %}" href="{% url 'admin:login' %}">Accedi</a>
+          </li>
+        {% endif %}
         {% if user.is_authenticated %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i> {{ user.first_name }} {{ user.last_name }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="#">Action</a>
+                <form id="logout-form" action="{% url 'admin:logout' %}" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="next" value="{{ request.path }}" />
+                  <input type="hidden" name="logout" value="1" />
+                  <input type="hidden" name="next" value="{% url 'homepage:index' %}" />
+                  <button type="submit" class="dropdown-item" href="{% url 'admin:logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Esci</button>
+                </form>
               </li>
+
               {% if user.is_staff %}
                 <li>
                   <hr class="dropdown-divider" />
@@ -30,6 +42,7 @@
                   <a class="dropdown-item" target="_blank" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i> Amministrazione</a>
                 </li>
               {% endif %}
+
             </ul>
           </li>
         {% endif %}
