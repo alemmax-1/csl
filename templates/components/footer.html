@@ -1,7 +1,24 @@
-<p class="float-end">
-  <a href="#">Back to top</a>
-</p>
-<p>
-  &copy; 2017–2025 Company, Inc. &middot;<a href="https://www.iubenda.com/privacy-policy/90091573" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-<a href="https://www.iubenda.com/privacy-policy/90091573/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-</p>
+{% comment %} <div class="row">
+  <div class="col">&copy; 2017–2025 Company, Inc. &middot;</div>
+  <div class="col">
+    
+  </div>
+  <div class="col">
+    
+  </div>
+  <div class="col">
+    <a href="#">Back to top</a>
+  </div>
+</div> {% endcomment %}
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
+
+  <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" aria-label="Bootstrap">
+    <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"/></svg>
+  </a>
+
+  <ul class="nav col-md-4 justify-content-end">
+    {% include 'components/policies/privacy.html' %}
+    {% include 'components/policies/cookies.html' %}
+  </ul>
+</footer>
