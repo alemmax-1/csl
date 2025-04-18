@@ -1,16 +1,37 @@
-<div class="container d-flex justify-content-center flex-wrap">
+{% comment %} <div class="container d-flex justify-content-center flex-wrap">
+  {% if marketings %}
+    {% for marketing in marketings %}
+      <div class="card mx-3 mb-4 col-12 col-md-6 col-lg-3">
+        {% if marketing.image %}
+          <img src="{{ marketing.image.url }}" class="card-img-top" alt="" />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ marketing.title }}</h5>
+          <p class="card-text">{{ marketing.description }}</p>
+          <a href="#" class="btn btn-outline-light">Go somewhere</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div> {% endcomment %}
+
     {% if marketings %}
-        {% for marketing in marketings %}
-            <div class="card mx-3 mb-4 col-12 col-md-6 col-lg-3">
-                {% if marketing.image %}
-                    <img src="{{ marketing.image.url }}" class="card-img-top" alt="" />
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ marketing.title }}</h5>
-                    <p class="card-text">{{ marketing.description }}</p>
-                    <a href="#" class="btn btn-outline-light">Go somewhere</a>
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
-</div>
+    <div class="row">
+      {% for marketing in marketings %}
+        <div class="col-lg-4">
+          {% if marketing.image %}
+          <img src="{{ marketing.image.url }}" class="card-img-top rounded" alt="" />
+          {% endif %}
+          <h2 class="fw-normal mt-3">{{ marketing.title }}</h2>
+          <p>{{ marketing.description }}</p>
+          <p>
+            <a class="btn btn-secondary" href="#">Dettagli &raquo;</a>
+          </p>
+        </div>
+      {% endfor %}
+  </div>
+  {% endif %}
+
+<!-- Three columns of text below the carousel -->
+
+<!-- /.row -->
