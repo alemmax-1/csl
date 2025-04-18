@@ -10,7 +10,7 @@ pip install -r requirements.txt
 python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
-python manage.py migrate homepage zero
+# python manage.py migrate homepage zero
 python manage.py migrate
-python manage.py loaddata db.json
-python create_superuser.py
+# python manage.py loaddata db.json
+# python create_superuser.py
